@@ -1,0 +1,34 @@
+#gnuplot twitter cover picture
+
+reset
+set term png x000000 xffffff enhanced size 1280,1024
+#set term png mono enhanced size 1280,1024
+
+#set term x11
+#set term postscript 
+
+set output "/home/andres/Documents/Media/TwitterCover.png" #Self-evident
+set isosample 50,50 #Set the samples for the plot
+#f(x,y)= ((sin (sqrt(x**2 + y**2))))/sqrt((x**2+y**2)) #Here is our equation. 
+f(x,y)=sin(sqrt(x**2+y**2))
+#Below ranges are for the top equation. 
+#set xrange [-25:25]
+#set yrange [-25:25]
+
+set xrange [-4:4]
+set yrange [-4:4]
+
+#set contour base
+#unset contour base
+#unset surface
+
+unset key
+unset border
+unset label
+set palette rgbformulae 0,13,30
+unset border; unset xtics; unset ytics ; unset ztics; unset x2tics; unset y2tics; 
+set view 50,40,1
+set pm3d
+splot f(x,y)
+replot
+
