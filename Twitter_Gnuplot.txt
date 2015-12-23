@@ -1,8 +1,9 @@
 #gnuplot twitter cover picture
 
 reset
-set term png x000000 xffffff enhanced size 1280,1024
-#set term png mono enhanced size 1280,1024
+# set term png enhanced size 1280 1024
+# Mac display is 2560 x 1600 
+set term png mono enhanced size 1280,1024
 
 #set term x11
 #set term postscript 

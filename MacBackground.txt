@@ -3,22 +3,26 @@
 reset # obvious what this does
 
 # set our terminal: ## ...do I even need to do this? 
-# set terminal pngcairo size 2560,1600 enhanced font 'Verdana,10'
+set terminal pngcairo size 2560,1600 enhanced font 'Verdana,10'
 
 # set output file: 
 set output 'macBackgroung.png'
 
 set object 1 rectangle from screen 0,0 to screen 1,1 fillcolor rgb "#000000" behind
 
-### ...some interesting function in 3D space will go here...
+### ...some i function in 3D space will go here...
+# define f(x): 
+f(x,y)=sin(sqrt(x**2+y**2))
+set xrange[-4:4]
+set yrange [-4:4]
 
 
 set contour base # turn contours on
 
 # get rid of unsightly tics: 
 
-unset border; unet xtics; unset ytics; unset ztics; unset x2tics; unset y2tics; 
+unset border; unset xtics; unset ytics; unset ztics; unset x2tics; unset y2tics; 
 # set view 
 set pm3d # what does this even do
-# splot f(x,y)
+splot f(x,y)
 replot
